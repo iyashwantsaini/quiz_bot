@@ -29,41 +29,38 @@ var something = (function () {
     if (!executed) {
       executed = true;
 
-
-      setTimeout(function() {
-        var BotResponse5 =
-          '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
-          "Hey, What is your name?" +
-          '</p><div class="clearfix"></div>';
-        $(BotResponse5).appendTo(".chats").hide().fadeIn(600);
-
-      }, 800);
+      // setTimeout(function () {
+      //   var BotResponse5 =
+      //     '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
+      //     "Hey, What is your name?" +
+      //     '</p><div class="clearfix"></div>';
+      //   $(BotResponse5).appendTo(".chats").hide().fadeIn(600);
+      // }, 800);
 
       setTimeout(function () {
-
         // const input = $("#mymessage").val();
 
-        if (input){
-        var BotResponse2 =
-          '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
-          `Hey ${input}, Lets Play a Quiz! <br> Choose a category` +
-          '</p><div class="clearfix"></div>';
-        $(BotResponse2).appendTo(".chats").hide().fadeIn(600);}
-        else {
-        var BotResponse2 =
-          '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
-          `Hey, Lets Play a Quiz! <br> Choose a category` +
-          '</p><div class="clearfix"></div>';
-        $(BotResponse2).appendTo(".chats").hide().fadeIn(600);}
-      }, 5000);
-
+        // if (input) {
+        //   var BotResponse2 =
+        //     '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
+        //     `Hey ${input}, Lets Play a Quiz! <br> Choose a category` +
+        //     '</p><div class="clearfix"></div>';
+        //   $(BotResponse2).appendTo(".chats").hide().fadeIn(600);
+        // } else {
+          var BotResponse2 =
+            '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
+            `Hey, Lets Play a Quiz! <br> Choose a category` +
+            '</p><div class="clearfix"></div>';
+          $(BotResponse2).appendTo(".chats").hide().fadeIn(600);
+        // }
+      }, 1000);
 
       setTimeout(function () {
         var bt =
           '<button id="gk" onclick="gk()" type="button" class="btn btn-secondary" style="margin-left:7px;margin-right:7px;">General Knowledge</button><button id="sports" onclick="sp()" type="button" class="btn btn-secondary" style="margin-left:7px;margin-right:7px;">Sports</button>' +
           '</p><div class="clearfix"></div>';
         $(bt).appendTo(".chats").hide().fadeIn(600);
-      }, 6000);
+      }, 1500);
     }
   };
 })();
@@ -97,14 +94,11 @@ function setBotResponse(val) {
   scrollToBottomOfResults();
 }
 
-
-function startquiz(){
-
-
+function startquiz() {
   var BotResponse =
-      '<img class="botAvatar" src="img/popcorn.png"><div class="quiz-container"><div id="quiz"></div></div>';
-    $(BotResponse).appendTo(".chats").hide().fadeIn(600);
-    scrollToBottomOfResults()
+    '<img class="botAvatar" src="img/popcorn.png"><div class="quiz-container"><div id="quiz"></div></div>';
+  $(BotResponse).appendTo(".chats").hide().fadeIn(600);
+  scrollToBottomOfResults();
 
   function buildQuiz() {
     // variable to store the HTML output
@@ -160,33 +154,41 @@ function startquiz(){
         numCorrect++;
         // color the answers green
         // answerContainers[questionNumber].style.color = "lightgreen";
-        const correctans=myQuestions[questionNumber].correctAnswer;
-        const correctElement = document.getElementById(`${correctans}${questionNumber}`);
+        const correctans = myQuestions[questionNumber].correctAnswer;
+        const correctElement = document.getElementById(
+          `${correctans}${questionNumber}`
+        );
         correctElement.classList.add("correctElement");
       }
       // if answer is wrong or blank
       else {
-
         // color the answers red
         // answerContainers[questionNumber].style.color = "red";
-        const correctans=myQuestions[questionNumber].correctAnswer;
-        const correctElement = document.getElementById(`${correctans}${questionNumber}`);
+        const correctans = myQuestions[questionNumber].correctAnswer;
+        const correctElement = document.getElementById(
+          `${correctans}${questionNumber}`
+        );
         correctElement.classList.add("correctElement");
-        
       }
     });
 
     // show number of correct answers out of total
     // resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    if (numCorrect<3){
-      setBotResponse(`Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`);
+    if (numCorrect < 3) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
     }
-    if (numCorrect===3){
-      setBotResponse(`Score : ${numCorrect} out of ${myQuestions.length}. Nicely played!`);
+    if (numCorrect === 3) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}. Nicely played!`
+      );
     }
-    if (numCorrect>3){
-      setBotResponse(`Score : ${numCorrect} out of ${myQuestions.length}. Woah!! You are on fire!`);
-    } 
+    if (numCorrect > 3) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}. Woah!! You are on fire!`
+      );
+    }
   }
 
   function showSlide(n) {
@@ -257,7 +259,8 @@ function startquiz(){
       correctAnswer: "2",
     },
     {
-      question: "What are the cannibalistic beasts called in H.G. Wells book The Time Machine?",
+      question:
+        "What are the cannibalistic beasts called in H.G. Wells book The Time Machine?",
       answers: {
         1: "Marlocks",
         2: "Warlocks",
@@ -271,7 +274,7 @@ function startquiz(){
   buildQuiz();
 
   var BotResponse =
-      '<button id="next" type="button" class="btn btn-secondary butn">Next Question</button><button id="previous" type="button" class="btn btn-secondary butn">Previous Question</button><button id="submit" type="button" class="btn btn-secondary butn">Submit Quiz</button><div id="results"></div>';
+    '<button id="next" type="button" class="btn btn-secondary butn">Next Question</button><button id="previous" type="button" class="btn btn-secondary butn">Previous Question</button><button id="submit" type="button" class="btn btn-secondary butn">Submit Quiz</button><div id="results"></div>';
   $(BotResponse).appendTo(".chats").hide().fadeIn(600);
   scrollToBottomOfResults();
 
@@ -290,18 +293,13 @@ function startquiz(){
   submitButton.addEventListener("click", showResults);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
-
 }
 
-
-
-function startsportsquiz(){
-
-
+function startsportsquiz() {
   var BotResponse =
-      '<img class="botAvatar" src="img/popcorn.png"><div class="quiz-container"><div id="quiz"></div></div>';
-    $(BotResponse).appendTo(".chats").hide().fadeIn(600);
-    scrollToBottomOfResults()
+    '<img class="botAvatar" src="img/popcorn.png"><div class="quiz-container"><div id="quiz"></div></div>';
+  $(BotResponse).appendTo(".chats").hide().fadeIn(600);
+  scrollToBottomOfResults();
 
   function buildQuiz() {
     // variable to store the HTML output
@@ -357,34 +355,41 @@ function startsportsquiz(){
         numCorrect++;
         // color the answers green
         // answerContainers[questionNumber].style.color = "lightgreen";
-        const correctans=myQuestions[questionNumber].correctAnswer;
-        const correctElement = document.getElementById(`${correctans}${questionNumber}`);
+        const correctans = myQuestions[questionNumber].correctAnswer;
+        const correctElement = document.getElementById(
+          `${correctans}${questionNumber}`
+        );
         correctElement.classList.add("correctElement");
       }
       // if answer is wrong or blank
       else {
-
         // color the answers red
         // answerContainers[questionNumber].style.color = "red";
-        const correctans=myQuestions[questionNumber].correctAnswer;
-        const correctElement = document.getElementById(`${correctans}${questionNumber}`);
+        const correctans = myQuestions[questionNumber].correctAnswer;
+        const correctElement = document.getElementById(
+          `${correctans}${questionNumber}`
+        );
         correctElement.classList.add("correctElement");
-        
       }
     });
 
     // show number of correct answers out of total
     // resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    if (numCorrect<3){
-      setBotResponse(`Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`);
+    if (numCorrect < 3) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
     }
-    if (numCorrect===3){
-      setBotResponse(`Score : ${numCorrect} out of ${myQuestions.length}. Nicely played!`);
+    if (numCorrect === 3) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}. Nicely played!`
+      );
     }
-    if (numCorrect>3){
-      setBotResponse(`Score : ${numCorrect} out of ${myQuestions.length}. Woah!! You are on fire!`);
-    } 
-    
+    if (numCorrect > 3) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}. Woah!! You are on fire!`
+      );
+    }
   }
 
   function showSlide(n) {
@@ -455,7 +460,8 @@ function startsportsquiz(){
       correctAnswer: "2",
     },
     {
-      question: "The famous football player Maradona belongs to which among the following countries?",
+      question:
+        "The famous football player Maradona belongs to which among the following countries?",
       answers: {
         1: "Brazil",
         2: "Chile",
@@ -469,7 +475,7 @@ function startsportsquiz(){
   buildQuiz();
 
   var BotResponse =
-      '<button id="next" type="button" class="btn btn-secondary butn">Next Question</button><button id="previous" type="button" class="btn btn-secondary butn">Previous Question</button><button id="submit" type="button" class="btn btn-secondary butn">Submit Quiz</button><div id="results"></div>';
+    '<button id="next" type="button" class="btn btn-secondary butn">Next Question</button><button id="previous" type="button" class="btn btn-secondary butn">Previous Question</button><button id="submit" type="button" class="btn btn-secondary butn">Submit Quiz</button><div id="results"></div>';
   $(BotResponse).appendTo(".chats").hide().fadeIn(600);
   scrollToBottomOfResults();
 
@@ -488,5 +494,4 @@ function startsportsquiz(){
   submitButton.addEventListener("click", showResults);
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
-
 }
