@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>QuizBot</title>
+  <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+      <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <script type="text/javascript">
+
+$(document.body).on('click','button', function() {
+
+    $(document).ready(function () {
+      $('.toast').toast('show');
+
+      $('#mymessage').on('keyup keypress', function (e) {
+        var keyCode = e.keyCode || e.which;
+        var text = $("#mymessage").val();
+        if (keyCode === 13) {
+          if (text == "" || $.trim(text) == '') {
+            e.preventDefault();
+            const input = text
+            return false;
+          } else {
+            e.preventDefault();
+            const input = text
+            setUserResponse(text);
+            const input = $("#mymessage").val();
+            $("#mymessage").blur();
+            
+
+          }
+        }
+      });
+
+      $('#sendbutton').on('click', function (e) {
+        var text = $("#mymessage").val();
+        if (text == "" || $.trim(text) == '') {
+          e.preventDefault();
+          return false;
+        } else {
+          e.preventDefault();
+          setUserResponse(text);
+          // const input = text
+          $("#mymessage").blur();
+
+
+        }
+      });
+
+
+    });
+
+  </script>
+
+
+<div class="slider_area ">
+        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-6 col-md-6">
+                        <div class="illastrator_png">
+                            <img src="img/banner/edu_ilastration.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="slider_info">
+                            <h3>Learn your <br>
+                                Favorite Course <br>
+                                From Online</h3>
+                            <a href="#" class="boxed_btn">Browse Our Courses</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <div class="container">
+    <div class="row">
+      <div id="Smallchat">
+        <div class="Layout Layout-open Layout-expand Layout-right"
+          style="background-color: #3F51B5;color: rgb(255, 255, 255);opacity: 5;border-radius: 10px;">
+          <div class="Messenger_messenger">
+            <div class="Messenger_header" style=" color: rgb(255, 255, 255); background-color: #DC143C">
+              <h4 class="Messenger_prompt">How can we help you?</h4>
+              <span class="chat_close_icon" style=" color:white;margin-right: 5px;float:right;margin-top: 5px;">
+                <i class="material-icons" aria-hidden="true">close</i>
+              </span>
+            </div>
+
+            <div class="Messenger_content">
+              <div class="Messages chats" id="chats">
+                <div class="clearfix"></div>
+              </div>
+              <div class="Input Input-blank">
+                <form>
+                  <input type="text" id="mymessage" class="Input_field" placeholder="Send a message..."
+                    style="height: 20px;"></input>
+                  <button id="sendbutton" class="Input_button Input_button-send" type="submit">
+                    <div class="Icon" style="width: 18px; height: 18px;">
+                      <svg width="57px" height="54px" viewBox="1496 193 57 54" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        style="width: 18px; height: 18px;">
+                        <g id="Group-9-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                          transform="translate(1523.000000, 220.000000) rotate(-270.000000) translate(-1523.000000, -220.000000) translate(1499.000000, 193.000000)">
+                          <path
+                            d="M5.42994667,44.5306122 L16.5955554,44.5306122 L21.049938,20.423658 C21.6518463,17.1661523 26.3121212,17.1441362 26.9447801,20.3958097 L31.6405465,44.5306122 L42.5313185,44.5306122 L23.9806326,7.0871633 L5.42994667,44.5306122 Z M22.0420732,48.0757124 C21.779222,49.4982538 20.5386331,50.5306122 19.0920112,50.5306122 L1.59009899,50.5306122 C-1.20169244,50.5306122 -2.87079654,47.7697069 -1.64625638,45.2980459 L20.8461928,-0.101616237 C22.1967178,-2.8275701 25.7710778,-2.81438868 27.1150723,-0.101616237 L49.6075215,45.2980459 C50.8414042,47.7885641 49.1422456,50.5306122 46.3613062,50.5306122 L29.1679835,50.5306122 C27.7320366,50.5306122 26.4974445,49.5130766 26.2232033,48.1035608 L24.0760553,37.0678766 L22.0420732,48.0757124 Z"
+                            id="sendicon" fill="#96AAB4" fill-rule="nonzero"></path>
+                        </g>
+                      </svg>
+                    </div>
+                  </button>
+                </form>
+                <hr style="width:100%">
+                <p class="love" style='line-height: 0px;'>Created with ❤&nbsp;&nbsp;by <a href="https://analyticware.in/">AnalyticWare</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+       <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-delay="8000">
+          <div class="toast-header">
+              <strong class="mr-auto" style="font-size: 20px;">Hey there 👋</strong>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+        </div>  
+
+        <div class="chat_on">
+          <img class="iconic" src="img/idea.ico">
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="js/index.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
