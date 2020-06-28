@@ -23,6 +23,18 @@ $(document).ready(function () {
   });
 });
 
+$(document).ready(function () {
+  $("#enter").classlick(function () {
+    $(".Layout").toggle();
+    $(".chat_on").hide(300);
+    something();
+  });
+  $(".chat_close_icon").click(function () {
+    $(".Layout").hide();
+    $(".chat_on").show(300);
+  });
+});
+
 var something = (function () {
   var executed = false;
   return function () {
@@ -64,6 +76,50 @@ var something = (function () {
     }
   };
 })();
+
+
+
+var somethinga = (function () {
+  // var executed = false;
+  return function () {
+    // if (!executed) {
+    //   executed = true;
+
+      // setTimeout(function () {
+      //   var BotResponse5 =
+      //     '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
+      //     "Hey, What is your name?" +
+      //     '</p><div class="clearfix"></div>';
+      //   $(BotResponse5).appendTo(".chats").hide().fadeIn(600);
+      // }, 800);
+
+      setTimeout(function () {
+        // const input = $("#mymessage").val();
+
+        // if (input) {
+        //   var BotResponse2 =
+        //     '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
+        //     `Hey ${input}, Lets Play a Quiz! <br> Choose a category` +
+        //     '</p><div class="clearfix"></div>';
+        //   $(BotResponse2).appendTo(".chats").hide().fadeIn(600);
+        // } else {
+          var BotResponse2 =
+            '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
+            `Hey, Lets Play again! <br> Choose another category` +
+            '</p><div class="clearfix"></div>';
+          $(BotResponse2).appendTo(".chats").hide().fadeIn(600);
+        // }
+      }, 1000);
+
+      setTimeout(function () {
+        var bt =
+          '<button id="gk" onclick="gk()" type="button" class="btn btn-secondary" style="margin-left:7px;margin-right:7px;">General Knowledge</button><button id="sports" onclick="sp()" type="button" class="btn btn-secondary" style="margin-left:7px;margin-right:7px;">Sports</button>' +
+          '</p><div class="clearfix"></div>';
+        $(bt).appendTo(".chats").hide().fadeIn(600);
+      }, 1500);
+    }
+  }
+)();
 
 function setUserResponse(val) {
   var UserResponse =
@@ -178,16 +234,19 @@ function startquiz() {
       setBotResponse(
         `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
       );
+      somethinga();
     }
     if (numCorrect === 3) {
       setBotResponse(
         `Score : ${numCorrect} out of ${myQuestions.length}. Nicely played!`
       );
+      somethinga();
     }
     if (numCorrect > 3) {
       setBotResponse(
         `Score : ${numCorrect} out of ${myQuestions.length}. Woah!! You are on fire!`
       );
+      somethinga();
     }
   }
 
@@ -379,16 +438,19 @@ function startsportsquiz() {
       setBotResponse(
         `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
       );
+      somethinga();
     }
     if (numCorrect === 3) {
       setBotResponse(
         `Score : ${numCorrect} out of ${myQuestions.length}. Nicely played!`
       );
+      somethinga();
     }
     if (numCorrect > 3) {
       setBotResponse(
         `Score : ${numCorrect} out of ${myQuestions.length}. Woah!! You are on fire!`
       );
+      somethinga();
     }
   }
 
@@ -495,3 +557,4 @@ function startsportsquiz() {
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
 }
+
