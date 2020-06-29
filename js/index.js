@@ -230,21 +230,58 @@ function startquiz() {
 
     // show number of correct answers out of total
     // resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    if (numCorrect < 3) {
+    if (numCorrect === 0) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}.`
+      );
+      setBotResponse(
+        `You got poor skills. I think you were the one who cheated in exams. 🤭`
+      );
+      somethinga();
+    }
+    if (numCorrect === 1) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}.`
+      );
+      setBotResponse(
+        `You gotta drink a cup of milk and try again 🥛🍼
+`
+      );
+      somethinga();
+    }
+    if (numCorrect === 2) {
       setBotResponse(
         `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
+      setBotResponse(
+        `Your score is still poor . Your parents will not be happy if they see this.  👨‍👩‍👧`
       );
       somethinga();
     }
     if (numCorrect === 3) {
       setBotResponse(
-        `Score : ${numCorrect} out of ${myQuestions.length}. Nicely played!`
+        `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
+      setBotResponse(
+        `You can do it better. Go wash your face and try again. 🚿`
       );
       somethinga();
     }
-    if (numCorrect > 3) {
+    if (numCorrect === 4) {
       setBotResponse(
-        `Score : ${numCorrect} out of ${myQuestions.length}. Woah!! You are on fire!`
+        `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
+      setBotResponse(
+        `You are close. Why don't hit a champion mark. Lets do it. 🥂`
+      );
+      somethinga();
+    }
+    if (numCorrect === 5) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
+      setBotResponse(
+        `Oh. I see , You are a champion🐒 . I am jealous. Congratulations 🥳`
       );
       somethinga();
     }
@@ -434,21 +471,58 @@ function startsportsquiz() {
 
     // show number of correct answers out of total
     // resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    if (numCorrect < 3) {
+    if (numCorrect === 0) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}.`
+      );
+      setBotResponse(
+        `You got poor skills. I think you were the one who cheated in exams. 🤭`
+      );
+      somethinga();
+    }
+    if (numCorrect === 1) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}.`
+      );
+      setBotResponse(
+        `You gotta drink a cup of milk and try again 🥛🍼
+`
+      );
+      somethinga();
+    }
+    if (numCorrect === 2) {
       setBotResponse(
         `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
+      setBotResponse(
+        `Your score is still poor . Your parents will not be happy if they see this.  👨‍👩‍👧`
       );
       somethinga();
     }
     if (numCorrect === 3) {
       setBotResponse(
-        `Score : ${numCorrect} out of ${myQuestions.length}. Nicely played!`
+        `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
+      setBotResponse(
+        `You can do it better. Go wash your face and try again. 🚿`
       );
       somethinga();
     }
-    if (numCorrect > 3) {
+    if (numCorrect === 4) {
       setBotResponse(
-        `Score : ${numCorrect} out of ${myQuestions.length}. Woah!! You are on fire!`
+        `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
+      setBotResponse(
+        `You are close. Why don't hit a champion mark. Lets do it. 🥂`
+      );
+      somethinga();
+    }
+    if (numCorrect === 5) {
+      setBotResponse(
+        `Score : ${numCorrect} out of ${myQuestions.length}. Try harder next time!`
+      );
+      setBotResponse(
+        `Oh. I see , You are a champion🐒 . I am jealous. Congratulations 🥳`
       );
       somethinga();
     }
