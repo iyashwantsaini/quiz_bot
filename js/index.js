@@ -79,47 +79,7 @@ var something = (function () {
 
 
 
-var somethinga = (function () {
-  // var executed = false;
-  return function () {
-    // if (!executed) {
-    //   executed = true;
 
-      // setTimeout(function () {
-      //   var BotResponse5 =
-      //     '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
-      //     "Hey, What is your name?" +
-      //     '</p><div class="clearfix"></div>';
-      //   $(BotResponse5).appendTo(".chats").hide().fadeIn(600);
-      // }, 800);
-
-      setTimeout(function () {
-        // const input = $("#mymessage").val();
-
-        // if (input) {
-        //   var BotResponse2 =
-        //     '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
-        //     `Hey ${input}, Lets Play a Quiz! <br> Choose a category` +
-        //     '</p><div class="clearfix"></div>';
-        //   $(BotResponse2).appendTo(".chats").hide().fadeIn(600);
-        // } else {
-          var BotResponse2 =
-            '<img class="botAvatar" src="img/popcorn.png"><p class="botMsg">' +
-            `Hey, Lets Play again! <br> Choose another category` +
-            '</p><div class="clearfix"></div>';
-          $(BotResponse2).appendTo(".chats").hide().fadeIn(600);
-        // }
-      }, 1000);
-
-      setTimeout(function () {
-        var bt =
-          '<button id="gk" onclick="gk()" type="button" class="btn btn-secondary" style="margin-left:7px;margin-right:7px;">General Knowledge</button><button id="sports" onclick="sp()" type="button" class="btn btn-secondary" style="margin-left:7px;margin-right:7px;">Sports</button>' +
-          '</p><div class="clearfix"></div>';
-        $(bt).appendTo(".chats").hide().fadeIn(600);
-      }, 1500);
-    }
-  }
-)();
 
 function setUserResponse(val) {
   var UserResponse =
@@ -237,7 +197,7 @@ function startquiz() {
       setBotResponse(
         `You got poor skills. I think you were the one who cheated in exams. 🤭`
       );
-      somethinga();
+
     }
     if (numCorrect === 1) {
       setBotResponse(
@@ -247,7 +207,7 @@ function startquiz() {
         `You gotta drink a cup of milk and try again 🥛🍼
 `
       );
-      somethinga();
+
     }
     if (numCorrect === 2) {
       setBotResponse(
@@ -256,7 +216,7 @@ function startquiz() {
       setBotResponse(
         `Your score is still poor . Your parents will not be happy if they see this.  👨‍👩‍👧`
       );
-      somethinga();
+
     }
     if (numCorrect === 3) {
       setBotResponse(
@@ -265,7 +225,7 @@ function startquiz() {
       setBotResponse(
         `You can do it better. Go wash your face and try again. 🚿`
       );
-      somethinga();
+
     }
     if (numCorrect === 4) {
       setBotResponse(
@@ -274,7 +234,7 @@ function startquiz() {
       setBotResponse(
         `You are close. Why don't hit a champion mark. Lets do it. 🥂`
       );
-      somethinga();
+
     }
     if (numCorrect === 5) {
       setBotResponse(
@@ -283,7 +243,7 @@ function startquiz() {
       setBotResponse(
         `Oh. I see , You are a champion🐒 . I am jealous. Congratulations 🥳`
       );
-      somethinga();
+
     }
   }
 
@@ -478,7 +438,7 @@ function startsportsquiz() {
       setBotResponse(
         `You got poor skills. I think you were the one who cheated in exams. 🤭`
       );
-      somethinga();
+
     }
     if (numCorrect === 1) {
       setBotResponse(
@@ -488,7 +448,7 @@ function startsportsquiz() {
         `You gotta drink a cup of milk and try again 🥛🍼
 `
       );
-      somethinga();
+
     }
     if (numCorrect === 2) {
       setBotResponse(
@@ -497,7 +457,7 @@ function startsportsquiz() {
       setBotResponse(
         `Your score is still poor . Your parents will not be happy if they see this.  👨‍👩‍👧`
       );
-      somethinga();
+
     }
     if (numCorrect === 3) {
       setBotResponse(
@@ -506,7 +466,7 @@ function startsportsquiz() {
       setBotResponse(
         `You can do it better. Go wash your face and try again. 🚿`
       );
-      somethinga();
+
     }
     if (numCorrect === 4) {
       setBotResponse(
@@ -515,7 +475,7 @@ function startsportsquiz() {
       setBotResponse(
         `You are close. Why don't hit a champion mark. Lets do it. 🥂`
       );
-      somethinga();
+
     }
     if (numCorrect === 5) {
       setBotResponse(
@@ -524,7 +484,7 @@ function startsportsquiz() {
       setBotResponse(
         `Oh. I see , You are a champion🐒 . I am jealous. Congratulations 🥳`
       );
-      somethinga();
+
     }
   }
 
