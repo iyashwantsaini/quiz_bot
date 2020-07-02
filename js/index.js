@@ -24,7 +24,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  $("#enter").classlick(function () {
+  $("#enter").click(function () {
     $(".Layout").toggle();
     $(".chat_on").hide(300);
     something();
